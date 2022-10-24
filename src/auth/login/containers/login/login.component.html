@@ -1,0 +1,13 @@
+<app-auth-form (submitted)="loginUser($event)">
+    <h1 style="justify-content: center; display: flex;">Login</h1>
+    
+    <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+        >
+        Login
+    </button>
+
+    <a routerLink="/auth/register">Not registered?</a>
+</app-auth-form>
