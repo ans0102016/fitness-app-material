@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { RegisterComponent } from './containers/register/register.component';
 
@@ -16,7 +17,8 @@ export const routes: Routes = [
         CommonModule,
         RouterModule.forChild(routes),
         SharedModule,
-        MatButtonModule
+        MatButtonModule,
+        MatFormFieldModule
     ],
     declarations: [
     RegisterComponent

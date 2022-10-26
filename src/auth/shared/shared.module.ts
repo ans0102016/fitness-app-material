@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
@@ -8,7 +8,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+// components
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
+
+// services
+import { AuthService } from './services/auth/auth.service';
 
 @NgModule({
     imports: [
@@ -29,4 +33,13 @@ import { AuthFormComponent } from './components/auth-form/auth-form.component';
     ]
   
 })
-export class SharedModule {}
+export class SharedModule {
+  static forRoot(): ModuleWithProviders<SharedModule> {
+    return {
+      ngModule: SharedModule,
+      providers: [
+        AuthService
+      ]
+    }
+  }
+}
